@@ -1,8 +1,6 @@
-# HighwindsCdn
+# HighwindsCDN
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/highwinds_cdn`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A Ruby wrapper of Highwinds CDN purge API.
 
 ## Installation
 
@@ -22,7 +20,17 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+``` Ruby
+api = Highwinds::API.new(token: 'xxxx')
+
+purge_id = api.purge_url('http://foo.bar/foo.file')
+
+# default recursive: false
+purge_id = api.purge_url('http://foo.bar/foo.file', recursive: true)
+
+# purge progress will between 0 and 1
+progress = api.get_purge_progress(purge_id)
+```
 
 ## Development
 
@@ -32,5 +40,5 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/highwinds_cdn.
+Bug reports and pull requests are welcome on GitHub at https://github.com/cardinalblue/highwinds_cdn.
 

@@ -1,3 +1,3 @@
-module HighwindsCdn
+module HighwindsCDN
   VERSION = "0.1.0"
 end
